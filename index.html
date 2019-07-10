@@ -1,0 +1,145 @@
+<link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'>
+
+<style>
+#all {
+ font-family: 'Alegreya Sans SC';font-size: 17pt; font-weight: bold;
+}
+body {
+background: #7C7B7B;color:black;
+}
+#messageContent {
+background: #CDCDCD;color:black;border:solid;border-radius:10px;border-width:2px;
+}
+img {
+border:solid;border-radius:8px;border-width:2px;
+}
+</style>
+
+<script>
+    //Set this to the message which will be displayed asking players to vote
+    var votemessage = "Please vote for the server!";
+    //Set this to the number of hours until server members are prompted to vote for your server again, if they voted already
+    var hours = 6;
+    //Set this to the URL of your voting page.
+    var url = "http://blockheadsfans.com/servers/vote.php?id=7903";
+    //Set this to a message to display if the user has voted in the past x days, can be left blank
+    var tymessage = "";
+    
+    //Implementation -- You probably don't need to change stuff below here.
+    function setCookie(cname,cvalue,hours) {
+        var d = new Date();
+        d.setTime(d.getTime() + (hours*60*60*1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname+"="+cvalue+"; "+expires;
+    }
+    
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    
+    function checkVote() {
+        var voteCheck = getCookie(document.title);
+        if (voteCheck != "") {
+            //Display if the user has voted
+            if (tymessage != "") {
+                 document.getElementById("tymessage").textContent = tymessage;
+            } else {
+                document.getElementById("tymessage").style.display = "none";
+            }
+        } else {
+            //If the user agrees to vote send them to the vote page and set the day cookie
+            if (confirm(votemessage)) {
+                setCookie(document.title, "true", hours);
+                location.assign(url);
+            }
+        }
+    }
+    addEventListener('load', checkVote);
+</script>
+
+<div id='all'>
+
+<center>
+
+<h2>Welcome to HD 40307 b!</h2>
+
+<hr>
+
+<img src="http://blockheadsfans.com/servers/dynamic_image.php?s=7903&top=7C7B7B&bottom=7C7B7B&font=000000&border=7C7B7B&type=small">
+
+<hr>
+
+<h3>Rules</h3>
+<p>1. There is absolutely no spoiling. This includes discussing things that you see on the server.</p>
+<p>2. Do not share with other pod dwellers. You may not help other players whatsoever, and this includes tips, guiding, giving them items, or more. Punishment is left to the staff's discretion.</p>
+<p>3. Script kiddies and cheaters get an immediate ban. Cheating is defined as duplicating items, using malicious hacks or glitches, or doing anything else deemed unfair by staff.</p>
+<p>4. Do not be purposely annoying by spamming in chat, on signs, or by any other means. Also, please do not role play or date. Keep the chat clean with no inappropriate language.</p>
+<p>5. You may tame animals that you have, as long as they are located inside of your pod. You may never tame a mob within the walls of the pod complex. The confines of the pod complex include 25 time crystals in both directions.</p>
+<p>6. Once you leave the pod complex, you may never, at any time, return to spawn. This will result in an immediate ban. If you die, you must either start over in a pod or teleport out of the complex. </p>
+<p>7. PVP is not allowed inside the pod complex; however, it is allowed outside the walls.</p>
+<p>8. To inquire about a second account, contact Porky for approval.</p>
+<p>9. Breaking blocks of your pod is strictly against the rules.</p>
+<p>10. If any of these rules are unclear, please ask a member of the staff for confirmation.</p>
+
+<hr>
+
+<h3>About HD 40307 b</h3>
+
+<p>The world as you know it is no longer. Centuries of global warming have caused Earth to become uninhabitable, and it's time to find a new home. Scientists have discovered a viable planet about 42 light years away. Your task is to repopulate your new home. You will be given some basic tools and shelter to survive, it will be difficult. When you are able, explore the barren landscape. The government has provided stability by way of the rules of the pods. Good luck, you'll need it.</p>
+
+<hr>
+
+<h3>Pod Beautification Challenge</h3>
+
+<p>Starting now and ending 1 week from today, you are invited to design your pod to match one of the following categories: nature, sci-fi, and renaissance.</p>
+
+<p>At 5 pm CST on Wednesday, July 10th, I will choose one pod from each category. You must place a sign in your pod that states which of the three categories your pod is designed like.</p>
+
+<p>Each of the 3 pods chosen will receive a prize that will be announced on Wednesday.</p>
+
+<hr>
+
+<h3>Frequently Asked Questions</h3>
+<p>Q: Is there any <em>item</em> on this server?<br>A: Yes, you are able to get all of the materials you need to escape. If you can't get it by meditating, you might find it in shops or somewhere in spawn.</p>
+<p>Q: How do I get <em>item</em>?<br>A: Meditate in the beginning. Once you get a steady food source, explore spawn and go outside to mine or find other materials.</p>
+<p>Q: Is it possible to escape?<br>A: Yes, it is quite possible. Just be patient. This is an expert mode server, and it's okay if you take a few days to escape.</p>
+<p>Q: Has anyone escaped before?<br>A: Yes, people have escaped.</p>
+
+<br>
+
+<hr>
+
+<h3>Tips</h3>
+
+<p>1. When you spawn in, meditate while you wait for an admin to assign a pod to you. Materials gained through meditation may prove useful later on.</p>
+<p>2. After you plant the tree in your pod, meditate until it bears fruit. Gather a variety of them, then explore the complex, but beware of other inhabitants.</p>
+<p>3. Complete your task as soon as you're able: leave the pod complex and spread your wings into the world.</p>
+<p>4. Click <a href="https://forums.theblockheads.net/t/seasons-fruits-and-tree-guide/5998?u=bilingual">this</a> link to determine what season it is from looking at trees.</p>
+<p>5. Click <a href="https://forums.theblockheads.net/t/a-community-guide-to-mob-breeding/66324?u=bilingual">this</a> link to see a guide on how to breed animals. Breeding dodos is particularly useful in this server.</p>
+<p>6. Join the <a href='https://discord.gg/YyDJuaV'>Discord server</a> for more help. Good luck.</p>
+<br>
+
+<button id='myButton'>Press Me!</button>
+
+<script>
+document.getElementById("myButton").onclick = function() {myFunction()};
+
+function myFunction() {
+	var test = prompt("After you leave the pod complex, you will find a sign containing a password. Enter that here to find your next quest.");
+
+	if(test==="porkChop12.escape!") {
+		document.getElementById("all").innerHTML = "Now that you have left the pod complex, your next task is to circumnavigate the world. Good luck.";
+	}
+}
+</script>
+
+</div>
